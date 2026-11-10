@@ -1,0 +1,139 @@
+:root{--c:#838a6f;--c-dark:#5f654f;--c-soft:#eef0e8;--ink:#2c2f26;--bg:#fbfaf6;--r:14px}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font:400 15px/1.7 'Poppins',sans-serif;color:var(--ink);background:#d9dccf;display:flex;justify-content:center}
+body.locked{overflow:hidden;height:100vh}
+#main,#cover{width:100%;max-width:480px;background:var(--bg)}
+#main{min-height:100vh;box-shadow:0 0 40px rgba(0,0,0,.12)}
+h1,h2,h3{font-family:'Newsreader',serif;font-weight:500;line-height:1.2}
+h2{font-size:30px;margin-bottom:18px;color:var(--c-dark)}
+h3{font-size:22px;margin-bottom:8px}
+p{margin-bottom:12px}
+.small{font-size:13px;letter-spacing:.06em}
+.names{font-size:46px;color:var(--c-dark)}
+.sec{padding:64px 26px;text-align:center}
+.sec.alt{background:var(--c-soft)}
+.sec[hidden],[hidden]{display:none!important}
+
+/* cover */
+#cover{position:fixed;top:0;z-index:50;height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;
+  color:#fff;background:var(--c) center/cover no-repeat;transition:transform .9s cubic-bezier(.7,0,.2,1)}
+#cover::before{content:"";position:absolute;inset:0;background:linear-gradient(transparent 20%,rgba(30,34,24,.75))}
+#cover.open{transform:translateY(-100%)}
+.cover-in{position:relative;padding:0 24px;width:100%}
+.cover-in .names{color:#fff;margin:6px 0 28px}
+.guest{font:500 22px 'Newsreader',serif;margin:4px 0 22px}
+
+/* buttons / forms */
+.btn{display:inline-block;border:0;border-radius:999px;background:var(--c);color:#fff;font:500 14px 'Poppins',sans-serif;
+  padding:11px 26px;margin:6px 4px;cursor:pointer;text-decoration:none;transition:background .2s}
+.btn:hover{background:var(--c-dark)}
+.btn.ghost{background:transparent;color:var(--c-dark);box-shadow:inset 0 0 0 1.5px var(--c)}
+.btn.ghost:hover{background:var(--c-soft)}
+.btn:disabled{opacity:.6;cursor:wait}
+#cover .btn{background:#fff;color:var(--c-dark)}
+.btn:focus-visible,.fab:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:2px solid var(--c-dark);outline-offset:2px}
+.form{max-width:380px;margin:20px auto 0;text-align:left}
+.form label{display:block;font-size:13px;font-weight:500;margin-bottom:14px}
+.form input,.form select,.form textarea{display:block;width:100%;margin-top:5px;padding:11px 13px;border:1px solid #c9ccbd;border-radius:10px;
+  background:#fff;font:400 14px 'Poppins',sans-serif;color:var(--ink)}
+.form .row{text-align:center}
+.msg{text-align:center;font-size:13px;min-height:20px;margin-top:10px;color:var(--c-dark)}
+.msg.err{color:#a33}
+
+/* content */
+.date{font:italic 400 20px 'Newsreader',serif;margin:10px 0 28px}
+.quote{font-family:'Newsreader',serif;font-size:17px;line-height:1.7;margin-top:18px}
+.quote b{display:block;margin-bottom:6px;font-family:'Poppins';font-size:13px}
+.couple .p{margin-bottom:30px}
+.couple .p h3{font-size:28px}
+.btn.ig{display:inline-flex;align-items:center;gap:6px;padding:8px 18px;font-size:13px}
+.pfoto{display:block;width:230px;max-width:100%;aspect-ratio:3/4;object-fit:cover;border-radius:999px 999px 16px 16px;margin:0 auto 18px;border:4px solid #fff;box-shadow:0 6px 22px rgba(0,0,0,.15)}
+.couple .amp{font:italic 40px 'Newsreader',serif;color:var(--c);margin:-8px 0 14px}
+.photo{width:100%;border-radius:var(--r);margin-bottom:26px}
+.timeline{list-style:none;text-align:left;border-left:2px solid var(--c);margin-left:10px;padding-left:22px}
+.timeline li{margin-bottom:26px;position:relative}
+.timeline li::before{content:"";position:absolute;left:-29px;top:6px;width:12px;height:12px;border-radius:50%;background:var(--c)}
+.timeline small{color:var(--c-dark);font-weight:500}
+.cd{display:flex;gap:10px;justify-content:center;margin-bottom:22px}
+.cd div{flex:1;max-width:84px;padding:14px 4px;border-radius:var(--r);background:var(--c-soft)}
+.cd b{display:block;font:500 30px 'Newsreader',serif;color:var(--c-dark)}
+.cd span{font-size:12px}
+.cards{display:grid;gap:18px}
+.card{background:#fff;border-radius:var(--r);padding:26px 20px;border:1px solid #dfe1d5;margin:18px 0}
+.card .no{font:500 20px 'Poppins';letter-spacing:.04em;color:var(--c-dark);margin:6px 0}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin:18px 0}
+.stats b{display:block;font:500 24px 'Newsreader',serif;color:var(--c-dark)}
+.stats span{font-size:11px}
+.wishes{list-style:none;text-align:left;margin-top:26px;max-height:420px;overflow:auto}
+.wishes li{background:#fff;border-radius:12px;padding:14px 16px;margin-bottom:10px;border:1px solid #dfe1d5}
+.wishes b{font-weight:600}
+.wishes .tag{font-size:11px;background:var(--c-soft);border-radius:99px;padding:1px 9px;margin-left:6px}
+.wishes small{display:block;color:#7b7e71;margin-top:4px}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.grid img{width:100%;aspect-ratio:3/4;object-fit:cover;border-radius:10px;cursor:zoom-in}
+.closing{background:var(--c);color:#fff}.closing h2{color:#fff;margin-top:20px}
+
+#hero{padding-top:80px;padding-bottom:8px}
+#hero .date{margin-bottom:68px}
+#mempelai h2{margin-top:-20px;margin-bottom:38px}
+.closing .see{margin-top:36px;margin-bottom:0}
+.closing .see + h2{margin-top:2px}
+
+/* floating */
+.fab{position:fixed;bottom:20px;left:max(16px,calc(50% - 224px));width:46px;height:46px;border-radius:50%;border:0;background:var(--c-dark);
+  color:#fff;font-size:20px;cursor:pointer;z-index:30;box-shadow:0 4px 14px rgba(0,0,0,.25)}
+.fab.spin{animation:spin 3s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+.modal{position:fixed;inset:0;z-index:80;background:rgba(0,0,0,.7);display:flex;align-items:center;justify-content:center;padding:20px}
+#lbImg{max-width:100%;max-height:80vh;border-radius:10px}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}html{scroll-behavior:auto}}
+
+/* ===== [BARU] ANIMASI & GERAKAN ===== */
+/* 1. Animasi muncul saat di-scroll (dipasang oleh JS) */
+.reveal{opacity:0;transition:opacity .9s cubic-bezier(.2,.7,.2,1),transform .9s cubic-bezier(.2,.7,.2,1);will-change:opacity,transform}
+.reveal.up{transform:translateY(34px)}
+.reveal.left{transform:translateX(-34px)}
+.reveal.zoom{transform:scale(.85)}
+.reveal.in{opacity:1;transform:none}
+.btn.reveal{transition:opacity .9s cubic-bezier(.2,.7,.2,1),transform .9s cubic-bezier(.2,.7,.2,1),background .2s}
+.btn.reveal.in:hover{transform:translateY(-2px)}
+
+/* 2. Animasi masuk di cover + tombol berdenyut */
+@keyframes fadeUp{from{opacity:0;transform:translateY(26px)}to{opacity:1;transform:none}}
+@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(255,255,255,.55)}70%,100%{box-shadow:0 0 0 14px rgba(255,255,255,0)}}
+.cover-in>*{animation:fadeUp 1s cubic-bezier(.2,.7,.2,1) both}
+.cover-in>:nth-child(1){animation-delay:.2s}
+.cover-in>:nth-child(2){animation-delay:.45s}
+.cover-in>:nth-child(3){animation-delay:.7s}
+.cover-in>:nth-child(4){animation-delay:.85s}
+#tombol-buka{animation:fadeUp 1s cubic-bezier(.2,.7,.2,1) 1.05s both,pulse 2.4s ease-out 2.2s infinite}
+
+/* 3. Gerakan halus: foto mempelai melayang, tanda & berdenyut */
+@keyframes floaty{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+@keyframes beat{0%,100%{transform:scale(1)}50%{transform:scale(1.18)}}
+.pfoto{animation:floaty 6s ease-in-out infinite}
+.couple .p:nth-of-type(2) .pfoto{animation-delay:-3s}
+.couple .amp{animation:beat 2.2s ease-in-out infinite}
+
+/* 4. Hover/tap tombol */
+.btn:hover{transform:translateY(-2px)}
+.btn:active{transform:scale(.96)}
+
+/* 5. Bar progres scroll */
+#progress{position:fixed;top:0;left:50%;width:100%;max-width:480px;height:3px;transform:translateX(-50%);z-index:40;pointer-events:none}
+#progress::before{content:"";display:block;height:100%;background:var(--c-dark);transform:scaleX(var(--p,0));transform-origin:left}
+
+/* 6. Lightbox muncul halus */
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+@keyframes zoomIn{from{opacity:0;transform:scale(.88)}to{opacity:1;transform:none}}
+.modal:not([hidden]){animation:fadeIn .3s ease}
+.modal:not([hidden]) #lbImg{animation:zoomIn .35s ease}
+
+/* 7. Galeri geser terus (marquee) */
+.marquee{overflow:hidden;margin:0 -26px}
+.marquee-track{display:flex;width:max-content;animation:marquee 40s linear infinite}
+.marquee-track img{flex:none;width:200px;aspect-ratio:3/4;object-fit:cover;border-radius:10px;margin-right:8px;cursor:zoom-in}
+.marquee:hover .marquee-track,.marquee:active .marquee-track{animation-play-state:paused}
+@keyframes marquee{to{transform:translateX(-50%)}}
+@media(prefers-reduced-motion:reduce){.marquee{overflow-x:auto}}

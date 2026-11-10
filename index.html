@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>The Wedding of Rizal &amp; Sandra</title>
+  <meta property="og:title" content="The Wedding of Rizal &amp; Sandra">
+  <meta property="og:description" content="Kami mengundang Anda di hari bahagia kami.">
+  <meta property="og:image" content="https://lh3.googleusercontent.com/d/1QRz6sXYysIfhyOcdlRvzDHeI8AtLNF86">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,400;0,500;1,400&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="locked">
+
+<!-- COVER -->
+<section id="cover">
+  <div class="cover-in">
+    <p class="small">The Wedding of</p>
+    <h1 class="names" id="coverNames"></h1>
+    <p class="small">Kepada Yth.</p>
+    <p class="guest" id="guestName">Tamu Undangan</p>
+    <button id="tombol-buka" class="btn">Buka Undangan</button>
+  </div>
+</section>
+
+<main id="main">
+  <section class="sec hero" id="hero">
+    <p class="small">The Wedding of</p>
+    <h1 class="names" id="heroNames"></h1>
+    <p class="date" id="heroDate"></p>
+    <div id="ayat"></div>
+  </section>
+
+  <section class="sec" id="mempelai">
+    <h2>Groom &amp; Bride</h2>
+    <div class="couple" id="couple"></div>
+  </section>
+
+  <section class="sec alt" id="journey">
+    <h2>Our Journey</h2>
+    <img id="journeyImg" class="photo" alt="" hidden>
+    <ol class="timeline" id="timeline"></ol>
+  </section>
+
+  <section class="sec" id="countdown">
+    <h2>Count the Date</h2>
+    <div class="cd">
+      <div><b id="cdD">00</b><span>Hari</span></div>
+      <div><b id="cdH">00</b><span>Jam</span></div>
+      <div><b id="cdM">00</b><span>Menit</span></div>
+      <div><b id="cdS">00</b><span>Detik</span></div>
+    </div>
+    <a id="btnCal" class="btn" target="_blank" rel="noopener">Simpan di Kalender</a>
+  </section>
+
+  <section class="sec alt" id="acara"><div class="cards" id="events"></div></section>
+
+  <section class="sec alt" id="live" hidden>
+    <h2>Live Streaming</h2>
+    <p>Kami mengajak anda yang tidak hadir langsung untuk bergabung pada momen spesial kami melalui siaran langsung secara live virtual di platform berikut.</p>
+    <a id="liveLink" class="btn" target="_blank" rel="noopener">Join Live</a>
+  </section>
+
+  <section class="sec" id="igfilter" hidden>
+    <h2>Filter Instagram</h2>
+    <p>Bantu kami memeriahkan acara kami dengan menggunakan Filter Instagram pada tautan di bawah.</p>
+    <a id="igLink" class="btn" target="_blank" rel="noopener">Join Filter</a>
+  </section>
+
+  <section class="sec alt" id="galeri" hidden>
+    <h2>Our Gallery</h2>
+    <div class="marquee" id="gallery"></div>
+  </section>
+
+  <section class="sec" id="amplop">
+    <h2>Wedding Gift</h2>
+    <p>Doa restu anda merupakan karunia yang sangat berarti bagi kami. Jika memberi adalah ungkapan tanda kasih, anda dapat memberi kado secara <i>cashless</i>.</p>
+    <button class="btn" id="btnGift">Klik Disini</button>
+    <div id="giftBox" hidden>
+      <div class="cards" id="banks"></div>
+      <div class="card" id="addrCard">
+        <h3>Alamat Kirim Kado</h3>
+        <p><small>Nama Penerima:</small><br><b id="aNama"></b></p>
+        <p><small>Nomor:</small><br><span id="aHp"></span></p>
+        <p><small>Alamat:</small><br><span id="aAlamat"></span></p>
+        <button class="btn ghost" data-copy="#aAlamat">Salin Alamat</button>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec alt" id="wish">
+    <h2>Wedding Wish</h2>
+    <p>Kirimkan doa &amp; ucapan kepada kedua mempelai</p>
+    <div class="stats">
+      <div><b id="stTotal">0</b><span>Comments</span></div>
+      <div><b id="stHadir">0</b><span>Hadir</span></div>
+      <div><b id="stTidak">0</b><span>Tidak hadir</span></div>
+      <div><b id="stRagu">0</b><span>Masih Ragu</span></div>
+    </div>
+    <form id="formWish" class="form" autocomplete="off">
+      <label>Nama <input id="wNama" required minlength="2" maxlength="60" placeholder="Nama"></label>
+      <label>Ucapan <textarea id="wUcapan" rows="3" required maxlength="500" placeholder="Ucapan"></textarea></label>
+      <label>Konfirmasi Kehadiran
+        <select id="wKet"><option value="Hadir">Datang</option><option value="Tidak Hadir">Absen</option><option value="Masih Ragu">Mungkin</option></select></label>
+      <button class="btn" type="submit" id="btnWish">Kirim</button>
+      <p class="msg" id="msgWish" role="status"></p>
+    </form>
+    <ul class="wishes" id="wishList"></ul>
+  </section>
+
+  <section class="sec closing">
+    <p id="penutup"></p>
+    <p>Terima kasih atas segala ucapan, doa, dan perhatian yang diberikan.</p>
+    <p class="see"><i>See you on our wedding day!</i></p>
+    <h2 id="closeNames"></h2>
+  </section>
+</main>
+
+<!-- [BARU] Bar progres scroll -->
+<div id="progress" aria-hidden="true"></div>
+
+<!-- Tombol melayang -->
+<button id="btnMusic" class="fab" aria-label="Putar / jeda musik" hidden>&#9835;</button>
+<audio id="audio" loop preload="none"></audio>
+
+<!-- Lightbox -->
+<div id="lightbox" class="modal" hidden><img id="lbImg" alt=""></div>
+
+<script src="config.js"></script>
+<script>const GUEST = (new URLSearchParams(location.search).get('to') || '').trim().slice(0, 60);</script>
+<script src="app.js"></script>
+</body>
+</html>
